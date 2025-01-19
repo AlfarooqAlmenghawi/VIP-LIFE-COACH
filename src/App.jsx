@@ -8,7 +8,7 @@ import FeesAndPricing from "./components/FeesAndPricing/FeesAndPricing";
 import Testimonials from "./components/Testimonials/Testimonials";
 import Contact from "./components/Contact/Contact";
 
-function App() {
+const App = () => {
   return (
     <>
       <BrowserRouter>
@@ -25,6 +25,6 @@ function App() {
       </BrowserRouter>
     </>
   );
-}
+};
 
 export default App;
