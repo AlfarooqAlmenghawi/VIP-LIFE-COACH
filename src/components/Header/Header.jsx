@@ -6,7 +6,7 @@ const Header = () => {
   const url = useLocation();
   console.log(url.pathname);
 
-  const [menu, setMenu] = useState("false");
+  const [menu, setMenu] = useState(false);
 
   const toggleMenu = () => {
     setMenu(!menu);
