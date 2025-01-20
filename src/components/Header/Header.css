@@ -5,6 +5,14 @@
   font-style: normal;
 }
 
+.mobile {
+  display: none;
+}
+
+.header-menu-icon {
+  display: none;
+}
+
 .header-items {
   width: 100%;
   display: flex;
@@ -85,4 +93,79 @@ body {
   height: 2px;
   background-color: #7bb96e;
   z-index: -1;
+}
+
+.header-links-mobile {
+  display: flex;
+  width: 150px;
+  margin-left: auto;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  z-index: 10;
+}
+
+@media screen and (min-width: 0px) and (max-width: 800.67px) {
+  .mobile {
+    display: block;
+  }
+
+  .vip-life-coach-logo {
+    /* border: 1px dotted; */
+    width: 10%;
+    height: 100%;
+    position: relative;
+  }
+
+  .header-items {
+    width: 100%;
+    display: flex;
+    border-bottom: 2px solid;
+    border-color: #7bb96e;
+    padding: 0px;
+  }
+
+  .header-links {
+    display: none;
+  }
+
+  .header-menu-icon {
+    display: block;
+    width: 5%;
+    height: 5%;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 10px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .header-link {
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 0.5em;
+    position: relative;
+    text-align: center;
+    /* border: 1px dotted; */
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    z-index: 10;
+  }
+
+  .header-link-active-page {
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 0.5em;
+    text-align: center;
+    position: relative;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+  }
 }
