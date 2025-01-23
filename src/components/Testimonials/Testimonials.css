@@ -9,7 +9,6 @@
   font-family: "Montserrat", serif;
   margin: auto;
   width: 80%;
-  text-align: center;
 }
 
 .individual-testimonial {
@@ -19,8 +18,12 @@
   background-color: #899c86;
 }
 
-/* font-family: "Montserrat", serif;
-font-optical-sizing: auto;
-font-weight: 100;
-font-style: normal;
-text-align: center; */
+.individual-testifier-name {
+  text-align: center;
+}
+
+.individual-testimonial-details {
+  margin: auto;
+  margin-bottom: 10px;
+  width: 90%;
+}

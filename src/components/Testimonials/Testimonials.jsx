@@ -186,10 +186,15 @@ const Testimonials = () => {
               <h2 className="individual-testifier-name">
                 {/* {index + 1}.*/} {testimonial.testifier}
               </h2>
-              {testimonial.testimonial.map((testimonial_part, index) => {
+              {testimonial.testimonial.map((testimonial_part, index, array) => {
                 return (
                   <p className="individual-testimonial-details" key={index}>
-                    {testimonial_part}
+                    {/* Logic below to handle placement of " in the beginning of and after the testimonials */}
+                    {index === 0
+                      ? '"' + testimonial_part
+                      : index === array.length - 1
+                      ? testimonial_part + '"'
+                      : testimonial_part}
                   </p>
                 );
               })}
