@@ -3,7 +3,7 @@ import "./Us.css";
 const Us = () => {
   return (
     <>
-      <h1 className="about-us-title">About Us</h1>
+      <h1 className="global-css-page-title">About Us</h1>
       <p className="placeholder">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper
         diam sapien. Sed ex felis, porta quis tortor ac, mattis viverra metus.

@@ -5,12 +5,11 @@
   font-style: normal;
 }
 
-.placeholder {
+.global-css-page-title {
   font-family: "Montserrat", serif;
   font-optical-sizing: auto;
-  font-weight: 100;
+  font-weight: 900;
   font-style: normal;
-  width: 90%;
-  margin: auto;
+  font-size: 50px;
   text-align: center;
 }

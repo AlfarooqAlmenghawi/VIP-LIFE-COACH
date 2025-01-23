@@ -7,6 +7,7 @@ import Location from "./components/Location/Location";
 import FeesAndPricing from "./components/FeesAndPricing/FeesAndPricing";
 import Testimonials from "./components/Testimonials/Testimonials";
 import Contact from "./components/Contact/Contact";
+import "./index.css";
 
 const App = () => {
   return (
