@@ -12,8 +12,24 @@ const Contact = () => {
             src="images/VIPLifeCoachBusinessCard.jpg"
           />
         </summary>
-        <aside>
-          <input placeholder="Name" />
+        <aside className="form">
+          <div className="form-line">
+            <input className="input-general" placeholder="Name *" />
+            <input className="input-general" placeholder="Email *" />
+          </div>
+          <div className="form-line">
+            <input className="input-general" placeholder="Phone Number" />
+            <input className="input-general" placeholder="Post Code" />
+          </div>
+          <div className="form-line">
+            <input className="input-general" placeholder="Subject *" />
+          </div>
+          <div className="form-line">
+            <textarea className="input-general" placeholder="Message *" />
+          </div>
+          <div className="form-line">
+            <button className="send-form-button">SEND</button>
+          </div>
         </aside>
       </section>
     </main>

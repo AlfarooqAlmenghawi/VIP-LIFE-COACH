@@ -5,3 +5,32 @@
 .contact-image {
   width: 600px;
 }
+
+.form {
+  width: 100%;
+}
+
+.form-line {
+  display: flex;
+}
+
+.input-general {
+  font-family: "Montserrat", serif;
+  width: 100%;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 0%;
+  border: 2px dotted;
+  transition: 0.1s;
+}
+
+.input-general:focus {
+  border-radius: 0%;
+  border: 2px dotted;
+  border-color: aquamarine;
+  outline: none;
+}
+
+textarea {
+  height: 200px;
+}
