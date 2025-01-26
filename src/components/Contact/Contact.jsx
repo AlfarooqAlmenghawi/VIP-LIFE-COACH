@@ -30,17 +30,18 @@ const Contact = () => {
     const regex = {
       name: /^[A-Za-z][A-Za-z\s\-']*$/,
       email: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-      phone_number: /^\+?[0-9\s\-()]*$/,
     };
     if (
       regex.name.test(formData.name) &&
       regex.email.test(formData.email) &&
-      regex.phone_number.test(formData.phone_number)
+      formData.subject &&
+      formData.message
     ) {
-      console.log("pass");
       setError(null);
     } else {
-      setError("Please make sure your name, email address are correct.");
+      setError(
+        "Please make sure your name, email address, subject and message are not empty and in the correct format."
+      );
     }
   }
 
@@ -106,7 +107,9 @@ const Contact = () => {
               placeholder="Message *"
             />
           </div>
-          <p style={{ margin: 0 }}>{error}</p>
+          <p className="error-info" style={{ margin: 0 }}>
+            {error}
+          </p>
           <div className="form-line">
             <button onClick={sendForm} className="send-form-button">
               SEND

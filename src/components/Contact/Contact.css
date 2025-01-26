@@ -67,3 +67,10 @@
 textarea {
   height: 200px;
 }
+
+.error-info {
+  font-family: "Montserrat", serif;
+  color: red;
+  font-size: 0.8em;
+  text-align: center;
+}
