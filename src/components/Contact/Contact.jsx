@@ -1,12 +1,61 @@
+import { useState } from "react";
 import "./Contact.css";
+import { useEffect } from "react";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: null,
+    email: null,
+    phone_number: null,
+    post_code: null,
+    subject: null,
+    message: null,
+  });
+  const [error, setError] = useState(null);
+
+  function updateForm(event) {
+    console.log(event.target.value, event.target.dataset.purpose);
+    if (!(event.target.value === "")) {
+      const modifiedData = { ...formData };
+      modifiedData[event.target.dataset.purpose] = event.target.value;
+      setFormData(modifiedData);
+    } else {
+      const modifiedData = { ...formData };
+      modifiedData[event.target.dataset.purpose] = null;
+      setFormData(modifiedData);
+    }
+  }
+
+  function sendForm() {
+    const regex = {
+      name: /^[A-Za-z][A-Za-z\s\-']*$/,
+      email: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+      phone_number: /^\+?[0-9\s\-()]*$/,
+    };
+    if (
+      regex.name.test(formData.name) &&
+      regex.email.test(formData.email) &&
+      regex.phone_number.test(formData.phone_number)
+    ) {
+      console.log("pass");
+      setError(null);
+    } else {
+      setError("Please make sure your name, email address are correct.");
+    }
+  }
+
+  useEffect(() => {
+    console.log(formData);
+  }, [formData]);
+
   return (
     <main>
       <h1 className="global-css-page-title">Contact</h1>
-      <h2>CONTACT ME & AND BOOK YOUR FREE CONSULTATION SESSION</h2>
+      <h2 className="contact-further-info">
+        CONTACT ME & AND BOOK YOUR FREE CONSULTATION SESSION
+      </h2>
       <section className="contact">
-        <summary>
+        <summary className="image-div">
           <img
             className="contact-image"
             src="images/VIPLifeCoachBusinessCard.jpg"
@@ -14,21 +63,54 @@ const Contact = () => {
         </summary>
         <aside className="form">
           <div className="form-line">
-            <input className="input-general" placeholder="Name *" />
-            <input className="input-general" placeholder="Email *" />
+            <input
+              data-purpose="name"
+              onChange={updateForm}
+              className="input-general"
+              placeholder="Name *"
+            />
+            <input
+              data-purpose="email"
+              onChange={updateForm}
+              className="input-general"
+              placeholder="Email *"
+            />
           </div>
           <div className="form-line">
-            <input className="input-general" placeholder="Phone Number" />
-            <input className="input-general" placeholder="Post Code" />
+            <input
+              data-purpose="phone_number"
+              onChange={updateForm}
+              className="input-general"
+              placeholder="Phone Number"
+            />
+            <input
+              data-purpose="post_code"
+              onChange={updateForm}
+              className="input-general"
+              placeholder="Post Code"
+            />
           </div>
           <div className="form-line">
-            <input className="input-general" placeholder="Subject *" />
+            <input
+              data-purpose="subject"
+              onChange={updateForm}
+              className="input-general"
+              placeholder="Subject *"
+            />
           </div>
           <div className="form-line">
-            <textarea className="input-general" placeholder="Message *" />
+            <textarea
+              data-purpose="message"
+              onChange={updateForm}
+              className="input-general"
+              placeholder="Message *"
+            />
           </div>
+          <p style={{ margin: 0 }}>{error}</p>
           <div className="form-line">
-            <button className="send-form-button">SEND</button>
+            <button onClick={sendForm} className="send-form-button">
+              SEND
+            </button>
           </div>
         </aside>
       </section>

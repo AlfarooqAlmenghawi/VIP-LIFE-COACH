@@ -2,12 +2,27 @@
   display: flex;
 }
 
+.contact-further-info {
+  font-family: "Montserrat", serif;
+  text-align: center;
+  font-size: 30px;
+  width: 100%;
+}
+
+.image-div {
+  width: 50%;
+  display: flex;
+  /* width: 200px; */
+}
+
 .contact-image {
-  width: 600px;
+  width: 100%;
+  margin: auto;
 }
 
 .form {
   width: 100%;
+  margin-left: auto;
 }
 
 .form-line {
@@ -27,7 +42,25 @@
 .input-general:focus {
   border-radius: 0%;
   border: 2px dotted;
-  border-color: aquamarine;
+  border-color: rgb(194, 194, 194);
+  outline: none;
+}
+
+.send-form-button {
+  font-family: "Montserrat", serif;
+  width: 100%;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 0%;
+  border: 2px dotted;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.send-form-button:active {
+  border-radius: 0%;
+  border: 2px dotted;
+  border-color: rgb(194, 194, 194);
   outline: none;
 }
 
